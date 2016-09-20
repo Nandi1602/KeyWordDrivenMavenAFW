@@ -7,9 +7,16 @@ public class Locator {
 	public static By getLocaor(String input1)
 	{
 		By b=null;
-		String[] str = input1.split("_");
+		//Get the locator using split function
+		/*String[] str = input1.split("_",2);
 		String locator=str[0];
-		String value=str[1];
+		String value=str[1];*/
+		
+		// Get the complete string including the locator separator using substring
+		int position=input1.indexOf("_");
+		String locator=input1.substring(0, position);
+		String value=input1.substring(position+1);
+		
 		if(locator.equalsIgnoreCase("ID")){
 			b=By.id(value);
 		}

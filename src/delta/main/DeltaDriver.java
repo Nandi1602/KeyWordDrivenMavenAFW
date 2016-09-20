@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
@@ -36,7 +37,7 @@ public class DeltaDriver extends BaseDriver {
 		System.out.println(browser);
 
 		//Running tests on remote machine - HUB configuration
-		try{
+		/*try{
 			remoteAddress = new URL(x.getParameter("hubURL")); //get the HUB URL from testNG xml
 			System.out.println("HUB URL: " + remoteAddress);
 		}catch(Exception e){
@@ -51,10 +52,10 @@ public class DeltaDriver extends BaseDriver {
 		//dc.setPlatform(Platform.LINUX);
 		System.out.println(browser);
 		
-		driver = new RemoteWebDriver(remoteAddress,dc);
+		driver = new RemoteWebDriver(remoteAddress,dc);*/
 		
 		
-		/*if(browser.equalsIgnoreCase("chrome")){
+		if(browser.equalsIgnoreCase("chrome")){
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			System.out.println("Opening Google Chrome Browser");
 			driver=new ChromeDriver();
@@ -67,7 +68,7 @@ public class DeltaDriver extends BaseDriver {
 		else{
 			System.out.println("Opening Firefox Browser");
 			driver=new FirefoxDriver();					
-		}*/
+		}
 		
 		driver.manage().timeouts().implicitlyWait(Long.parseLong(timeOut), TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -98,6 +99,11 @@ public class DeltaDriver extends BaseDriver {
 		else{
 			testReport.log(LogStatus.SKIP, "Execution Status is 'NO'");
 			throw new SkipException("Skipping Scenario as execution status is 'NO'"); //to show the test status as skipped in testNG reports
+		}
+		if(testReport.getRunStatus()==LogStatus.FAIL)
+		{
+			System.out.println("test case failed");
+			Assert.fail();
 		}
 }
 	

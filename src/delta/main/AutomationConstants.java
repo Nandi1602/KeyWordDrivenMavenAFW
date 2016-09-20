@@ -9,6 +9,8 @@ public interface AutomationConstants {
 	public String controllerPath="./scripts/Controller.xlsx";
 	public String chromeDriverPath="./driver/chromedriver.exe";
 	public String ieDriverPath="./driver/IEDriverServer.exe";
+	public static  final String  ActualImageFolder="./ActualImage";
+	public static  final String  ExpectedImageFolder="./ExpectedImage";
 	
 	
 }

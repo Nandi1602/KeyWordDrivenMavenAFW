@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/3</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Sep 04 12:16:26 IST 2016</td>
+<td>Started on:</td><td>Sat Sep 10 18:23:59 IST 2016</td>
 </tr>
-<tr><td>Total time:</td><td>1 seconds (1126 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2317 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,8 +76,25 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='delta.main.DeltaDriver.launchApp()'><b>launchApp</b><br>Test class: delta.main.DeltaDriver<br>Parameters: [Test: "Default test" verbose:2[parameters:][metagroups:] [included: ][excluded: ]  classes:[XmlClass class=delta.main.DeltaDriver]  packages:] </td>
-<td><div><pre>java.lang.NullPointerException
-	at delta.main.DeltaDriver.launchApp(DeltaDriver.java:30)
+<td><div><pre>org.openqa.selenium.WebDriverException: The best matching driver provider org.openqa.selenium.ie.InternetExplorerDriver can&apos;t create a new driver instance for Capabilities [{platform=ANY}]
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;CBT-020&apos;, ip: &apos;10.10.4.98&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 339 milliseconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;CBT-020&apos;, ip: &apos;10.10.4.98&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+	at delta.main.DeltaDriver.launchApp(DeltaDriver.java:54)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -105,9 +122,41 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-</pre></div><a href='#' onClick='toggleBox("stack-trace815320891", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace815320891'><pre>java.lang.NullPointerException
-	at delta.main.DeltaDriver.launchApp(DeltaDriver.java:30)
+Caused by: org.openqa.selenium.WebDriverException: The best matching driver provider org.openqa.selenium.ie.InternetExplorerDriver can&apos;t create a new driver instance for Capabilities [{platform=ANY}]
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;CBT-020&apos;, ip: &apos;10.10.4.98&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;CBT-020&apos;, ip: &apos;10.10.4.98&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:62)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1257299717", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1257299717'><pre>org.openqa.selenium.WebDriverException: The best matching driver provider org.openqa.selenium.ie.InternetExplorerDriver can&apos;t create a new driver instance for Capabilities [{platform=ANY}]
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;CBT-020&apos;, ip: &apos;10.10.4.98&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 339 milliseconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;CBT-020&apos;, ip: &apos;10.10.4.98&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+	at delta.main.DeltaDriver.launchApp(DeltaDriver.java:54)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -135,9 +184,24 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.WebDriverException: The best matching driver provider org.openqa.selenium.ie.InternetExplorerDriver can&apos;t create a new driver instance for Capabilities [{platform=ANY}]
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;CBT-020&apos;, ip: &apos;10.10.4.98&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;
+Driver info: driver.version: unknown
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;CBT-020&apos;, ip: &apos;10.10.4.98&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_73&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:62)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
 </pre></div></td>
 <td>0</td>
-<td>delta.main.DeltaDriver@5419f379</td></tr>
+<td>delta.main.DeltaDriver@7085bdee</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
@@ -147,30 +211,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='delta.main.DeltaDriver.launchApp()'><b>launchApp</b><br>Test class: delta.main.DeltaDriver</td>
-<td></td>
-<td>0</td>
-<td>delta.main.DeltaDriver@5419f379</td></tr>
-<tr>
-<td title='delta.main.DeltaDriver.launchApp()'><b>launchApp</b><br>Test class: delta.main.DeltaDriver</td>
-<td></td>
-<td>0</td>
-<td>delta.main.DeltaDriver@5419f379</td></tr>
-<tr>
 <td title='delta.main.DeltaDriver.quitApp()'><b>quitApp</b><br>Test class: delta.main.DeltaDriver</td>
 <td></td>
 <td>0</td>
-<td>delta.main.DeltaDriver@5419f379</td></tr>
-<tr>
-<td title='delta.main.DeltaDriver.quitApp()'><b>quitApp</b><br>Test class: delta.main.DeltaDriver</td>
-<td></td>
-<td>0</td>
-<td>delta.main.DeltaDriver@5419f379</td></tr>
-<tr>
-<td title='delta.main.DeltaDriver.quitApp()'><b>quitApp</b><br>Test class: delta.main.DeltaDriver</td>
-<td></td>
-<td>0</td>
-<td>delta.main.DeltaDriver@5419f379</td></tr>
+<td>delta.main.DeltaDriver@7085bdee</td></tr>
 <tr>
 <td title='delta.main.DeltaDriver.endFrameWork()'><b>endFrameWork</b><br>Test class: delta.main.DeltaDriver</td>
 <td></td>
@@ -185,20 +229,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='delta.main.DeltaDriver.testScenarios()'><b>testScenarios</b><br>Test class: delta.main.DeltaDriver<br>Parameters: Scenario1, yes</td>
+<td title='delta.main.DeltaDriver.testScenarios()'><b>testScenarios</b><br>Test class: delta.main.DeltaDriver<br>Parameters: Login, yes</td>
 <td></td>
 <td>0</td>
-<td>delta.main.DeltaDriver@5419f379</td></tr>
-<tr>
-<td title='delta.main.DeltaDriver.testScenarios()'><b>testScenarios</b><br>Test class: delta.main.DeltaDriver<br>Parameters: Scenario2, YES</td>
-<td></td>
-<td>0</td>
-<td>delta.main.DeltaDriver@5419f379</td></tr>
-<tr>
-<td title='delta.main.DeltaDriver.testScenarios()'><b>testScenarios</b><br>Test class: delta.main.DeltaDriver<br>Parameters: Scenario1, no</td>
-<td></td>
-<td>0</td>
-<td>delta.main.DeltaDriver@5419f379</td></tr>
+<td>delta.main.DeltaDriver@7085bdee</td></tr>
 </table><p>
 </body>
 </html>
